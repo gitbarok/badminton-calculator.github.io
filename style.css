@@ -85,14 +85,47 @@ body {
     flex-direction: row;
     gap: 10px;
     margin: auto;
+    font-size: small;
 }
+
 
 .details input {
     height: 37.5px;
+    width: 185px;
+}
+
+@media (max-width: 414px) {
+    .details {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: auto;
+        font-size: small;
+    }
+}
+
+.details .shuttlecock-details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2px
+}
+
+.details .court-details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2px
 }
 
 #totalPays::before {
     content: 'Rp. ';
     font-size: 0.75em;
     margin-left: 0.1em;
+}
+
+footer {
+    text-align: center;
+    font-size: smaller;
+    color: silver;
 }
