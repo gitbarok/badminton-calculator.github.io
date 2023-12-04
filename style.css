@@ -1,0 +1,98 @@
+body {
+    max-width: 500px;
+    margin: auto;
+}
+
+.content {
+    margin: 10px;
+}
+
+.content h1 {
+    text-align: center;
+}
+
+.content p {
+    text-align: center;
+}
+
+.addPlayerInput {
+    display: inline-block;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    border: solid 1px;
+    padding: 10px;
+    margin: 10px 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.counter {
+    margin-left: auto;
+}
+
+.counter-details {
+    display: flex;
+    gap: 5px;
+}
+
+#totalShuttlecock {
+    width: 80px;
+    justify-content: center;
+    text-align: center;
+}
+
+#totalShuttlecock::after {
+    content: ' Shuttlecock';
+    font-size: 0.75em;
+    margin-left: 0.1em;
+}
+
+.addPlayerInput {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0px;
+}
+
+.addPlayerInput .playerName {
+    width: auto;
+    height: 37.5px;
+}
+
+.addPlayerInput button {
+    height: 37.5px;
+}
+
+.calculate-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0px;
+}
+
+.calculate {
+    width: auto;
+    background-color: #bee3be;
+    font-weight: bold;
+    height: 37.5px;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: auto;
+}
+
+.details input {
+    height: 37.5px;
+}
+
+#totalPays::before {
+    content: 'Rp. ';
+    font-size: 0.75em;
+    margin-left: 0.1em;
+}
