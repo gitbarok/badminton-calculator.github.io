@@ -11,4 +11,4 @@ In practical terms, if one game involves four balls, each priced at 16000, the c
 
 The final amount that each individual must pay is determined by the sum of the court price and the individual ball cost, expressed as `individual_must_pay = price_court_individual + ball_price_perindividual`.
 
-ps. i know the code for this app is tr#sh, im trying my best hahahahah
+ps. i know the code for this app is tr#sh, im trying my best hahahahahh
