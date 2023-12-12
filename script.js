@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 let id = 0;
 function addPlayer() {
     const playerName = document.getElementById("playerName").value;
-    players.push({ id: id, player: playerName, total: 0 });
+    players.push({ id: id, player: playerName, total: 0, totalPrice: 0 });
     id += 1;
     document.dispatchEvent(new Event(RENDER_EVENT));
     console.log(players);
@@ -40,9 +40,7 @@ function addPlayer() {
 function increment(data) {
     new_total = players[data].total + 1;
     players[data].total = new_total;
-    console.log(players[data].total);
     document.querySelectorAll("[id='totalShuttlecock']")[data].innerHTML = new_total;
-    console.log(players[data]);
 }
 
 function decrement(data) {
@@ -65,7 +63,7 @@ document.addEventListener('render_klasemen', function () {
         <div><span id="playerNameSpan">${player.player}</span></div>
         <div class="counter">
             <div class="counter-details">
-                <span id="totalPays">${player.total}</span>
+                <span id="totalPays">${player.totalPrice}</span>
             </div>
         </div>
     </div>`
@@ -79,11 +77,12 @@ calculate_urunan.addEventListener('click', function (e) {
     const courtPrice = document.getElementById('courtPrice').value;
     if (priceShuttlecock && courtPrice) {
         const courtPriceIndividu = Math.ceil(courtPrice / players.length);
+        // double player it means that 4 peps play in 1 game
         const priceShuttlecockIndividu = Math.ceil(priceShuttlecock / 4);
         players.forEach(player => {
-            player.total = player.total * priceShuttlecockIndividu;
-            player.total = Math.ceil(player.total + courtPriceIndividu);
+            player.totalPrice = (player.total * priceShuttlecockIndividu) + courtPriceIndividu;
         });
+        console.log(players)
         document.dispatchEvent(new Event('render_klasemen'));
         e.preventDefault();
     } else {

@@ -55,6 +55,7 @@ body {
     flex-direction: column;
     gap: 10px;
     margin: 10px 0px;
+    margin-bottom: 40px;
 }
 
 .addPlayerInput .playerName {
@@ -73,35 +74,23 @@ body {
     margin: 10px 0px;
 }
 
-.calculate {
-    width: auto;
+.calculate-details button {
+    height: 37.5px;
     background-color: #bee3be;
     font-weight: bold;
-    height: 37.5px;
 }
 
-.details {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin: auto;
+label {
+    background-color: rgb(226, 225, 225);
+    margin-bottom: -5px;
     font-size: small;
+    text-align: center;
+    padding: 5px;
 }
 
-
-.details input {
+.calculate-details input {
     height: 37.5px;
-    width: 185px;
-}
-
-@media (max-width: 414px) {
-    .details {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin: auto;
-        font-size: small;
-    }
+    width: auto;
 }
 
 .details .shuttlecock-details {
@@ -122,6 +111,10 @@ body {
     content: 'Rp. ';
     font-size: 0.75em;
     margin-left: 0.1em;
+}
+
+.table-player {
+    margin-bottom: 40px;
 }
 
 footer {

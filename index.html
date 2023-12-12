@@ -13,7 +13,13 @@
         <h1>Urunan Dana Badminton</h1>
         <p>Aplikasi urunan badminton ini diciptakan untuk mempermudah dan meningkatkan pengelolaan keuangan serta
             koordinasi di antara para pemain dan penggemar badminton. Dengan adanya aplikasi ini, para
-            penggemar badminton dapat dengan mudah mengetahui jumlah pembayaran yang harus dibayar per-individu</p>
+            penggemar badminton dapat dengan mudah mengetahui jumlah pembayaran yang harus dibayar per-individu,
+        </p>
+        <p><b style="background-color: yellow;">Untuk sekarang calculator ini hanya untuk permainan badminton ganda</b>
+        </p>
+        <div class="table-player" id="table-player" style="display: none;">
+        </div>
+        <h1>Tambah Player</h1>
         <div class="player-list-shuttlecock" id="player-list">
         </div>
         <form action="#" class="form" id="form-player">
@@ -23,21 +29,13 @@
             </div>
         </form>
         <div class="calculate-details">
-            <div class="details">
-                <div class="shuttlecock-details">
-                    <label for="oneShuttlecock">Harga Shuttlecock</label>
-                    <input type="number" id="oneShuttlecock" class="playerName" placeholder="Harga 1 Shuttlecock"
-                        required>
-                </div>
-                <div class="court-details">
-                    <label for="courtPrice">Harga Lapangan</label>
-                    <input type="number" id="courtPrice" class="playerName" placeholder="Biaya sewa lapangan" required>
-                </div>
-            </div>
+            <label for="oneShuttlecock">Harga Shuttlecock</label>
+            <input type="number" id="oneShuttlecock" class="playerName" placeholder="Harga 1 Shuttlecock" required>
+            <label for="courtPrice">Harga Lapangan</label>
+            <input type="number" id="courtPrice" class="playerName" placeholder="Biaya sewa lapangan" required>
             <button id="calculate" class="calculate">Proses Urunan</button>
         </div>
-        <div class="table-player" id="table-player" style="display: none;">
-        </div>
+
         <footer>
             <p>Created by RizkyMubarok</p>
         </footer>
