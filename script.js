@@ -32,8 +32,7 @@ function addPlayer() {
     const playerName = document.getElementById("playerName").value;
     players.push({ id: id, player: playerName, total: 0, totalPrice: 0 });
     id += 1;
-    document.dispatchEvent(new Event(RENDER_EVENT));
-    console.log(players);
+    document.dispatchEvent(new Event(RENDER_EVENT))
     document.getElementById("playerName").value = "";
 };
 
@@ -47,7 +46,6 @@ function decrement(data) {
     new_total = players[data].total - 1;
     if (new_total !== -1) {
         players[data].total = new_total;
-        console.log(players[data].total);
         document.querySelectorAll("[id='totalShuttlecock']")[data].innerHTML = new_total;
     } else {
         alert("shuttlecock tidak boleh kurang dari 0")
@@ -76,13 +74,12 @@ calculate_urunan.addEventListener('click', function (e) {
     const priceShuttlecock = document.getElementById('oneShuttlecock').value;
     const courtPrice = document.getElementById('courtPrice').value;
     if (priceShuttlecock && courtPrice) {
-        const courtPriceIndividu = Math.ceil(courtPrice / players.length);
+        const courtPriceIndividu = Math.ceil((courtPrice / players.length) / 1000) * 1000;
         // double player it means that 4 peps play in 1 game
-        const priceShuttlecockIndividu = Math.ceil(priceShuttlecock / 4);
+        const priceShuttlecockIndividu = Math.ceil((priceShuttlecock / 4) / 1000) * 1000;
         players.forEach(player => {
             player.totalPrice = (player.total * priceShuttlecockIndividu) + courtPriceIndividu;
         });
-        console.log(players)
         document.dispatchEvent(new Event('render_klasemen'));
         e.preventDefault();
     } else {
