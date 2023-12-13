@@ -73,17 +73,23 @@ const calculate_urunan = document.getElementById("calculate");
 calculate_urunan.addEventListener('click', function (e) {
     const priceShuttlecock = document.getElementById('oneShuttlecock').value;
     const courtPrice = document.getElementById('courtPrice').value;
-    if (priceShuttlecock && courtPrice) {
-        const courtPriceIndividu = Math.ceil((courtPrice / players.length) / 1000) * 1000;
-        // double player it means that 4 peps play in 1 game
-        const priceShuttlecockIndividu = Math.ceil((priceShuttlecock / 4) / 1000) * 1000;
-        players.forEach(player => {
-            player.totalPrice = (player.total * priceShuttlecockIndividu) + courtPriceIndividu;
-        });
-        document.dispatchEvent(new Event('render_klasemen'));
-        e.preventDefault();
-    } else {
-        alert("Harga shuttlecock atau harga lapangan kosong");
-    };
+    if (players.length >= 4) {
+        if (priceShuttlecock && courtPrice) {
+            const courtPriceIndividu = Math.ceil((courtPrice / players.length) / 1000) * 1000;
+            // double player it means that 4 peps play in 1 game
+            const priceShuttlecockIndividu = Math.ceil((priceShuttlecock / 4) / 1000) * 1000;
+            players.forEach(player => {
+                player.totalPrice = (player.total * priceShuttlecockIndividu) + courtPriceIndividu;
+            });
+            document.dispatchEvent(new Event('render_klasemen'));
+            e.preventDefault();
+        } else {
+            alert("Harga shuttlecock atau harga lapangan kosong");
+        };
+    }
+    else {
+        alert("Jumlah player kurang dari 4");
+    }
+
 })
 
